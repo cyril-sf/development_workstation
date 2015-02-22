@@ -1,0 +1,22 @@
+" Unset certain default mac menus.
+"
+" See
+"   /usr/local/Cellar/macvim/7.3-64/MacVim.app/Contents/Resources/vim/runtime/menu.vim
+" for the default menu
+"
+macmenu &File.New\ Tab key=<nop>
+macmenu &File.Open\ Tab\.\.\.<Tab> key=<nop>
+
+
+" Have command-t respect its namesake.
+map <D-t> :CommandT<CR>
+map <D-T> :tabnew<CR>
+
+
+" Start with 10 tabs
+while tabpagenr('$') < 10
+  execute ":tabnew"
+endwhile
+
+
+" vim:ft=vim:
